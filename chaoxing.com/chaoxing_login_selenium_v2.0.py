@@ -24,9 +24,9 @@ def GetCode():
 
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'AppKey': 'AKID9298880566989e139d19590c3d755e30',
-        'AppSecret': 'e809f7aed7776067e8ec974e3aa55b19',
-        'AppCode': '59DFDD237D88D26DA4E82578E3DC1FBF'
+        'AppKey': '',
+        'AppSecret': '',
+        'AppCode': ''
     }
     response = requests.post(url = url,data = PostData,headers = headers)
     result = response.json()
@@ -37,7 +37,7 @@ def GetCode():
 
 
 def GetCodeImage():
-    # 这块用其他方法定位截图一直行不同 只能一步一步这样调试了
+    # 这块用其他方法定位截图一直行不通 只能一步一步这样调试了
     driver.save_screenshot('code.png')
     code = driver.find_element_by_id('numVerCode')
     left = code.location['x'] + code.size['width'] +50
